@@ -56,6 +56,7 @@ function show_instructions(){
   function win() {
   $('.modal1').fadeIn(200);
   clearInterval(x);
+  fetch("/score",{method:"POST",body:JSON.stringify({score:100})})
 }
 
   //loss modal

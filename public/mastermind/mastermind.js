@@ -56,11 +56,6 @@ function show_instructions(){
   function win() {
   $('.modal1').fadeIn(200);
   clearInterval(x);
-  fetch("/score",
-        {method:"POST",
-         body:JSON.stringify({score:100}),
-         headers:{"Content-type": "application/json; charset=UTF-8"}
-         )
 }
 
   //loss modal
@@ -68,6 +63,7 @@ function show_instructions(){
     document.getElementById('loss1').innerHTML ="Answer: "+nanswerRay;
     $('.modal2').fadeIn(200);
     clearInterval(x);
+    fetch("/score",{method:"POST",body:JSON.stringify({score:100}),headers:{"Content-type": "application/json; charset=UTF-8"}})
   }
 
 

@@ -56,13 +56,10 @@ start_function = () =>	{
             // check valid move here then 
             // 1. freeze the player
             // 2. send the click
-                if (valid_move.value) {
-                    document.getElementsByClassName('container')[0].style.pointerEvents = "none";
-                    socket.emit('click-chain-reaction', div.id, count_moves%total_players, () => {
-						console.log("move")
-						socket.emit('freeze-chain-reaction', valid_move.value)
-                    })
-                }
+                socket.emit('click-chain-reaction', div.id, count_moves%total_players, () => {
+					console.log("move")
+					socket.emit('freeze-chain-reaction', valid_move.value)
+                })
             })
             document.getElementsByClassName('container')[0].appendChild(div);
             cssMultiStyles('r' + row_entry +'c' + col_entry,{'grid-column': col_entry+1 , 'grid-row': row_entry+1}) 

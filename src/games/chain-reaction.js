@@ -36,8 +36,9 @@ io.on('connection', (socket) => {
         try {
             if (isPaired(socket.id)) {
                 const opponent = getOpponent(socket.id)
-                callback(true, opponent.id)
-                io.to(opponent.id).emit('start-chain-reaction', opponent.id)
+                const roomUsers = getUsersInRoom(opponent.room)
+                callback(true, opponent.id, roomUsers[0].username, roomUsers[1].username)
+                io.to(opponent.id).emit('start-chain-reaction', opponent.id, roomUsers[1].username, roomUsers[0].username)
                 io.to(opponent.id).emit('freezePlayer-chain-reaction')
                 
             }

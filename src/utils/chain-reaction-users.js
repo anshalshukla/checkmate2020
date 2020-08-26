@@ -86,7 +86,7 @@ const getOpponent = (id) => {
     return opponent
 }
 const getUsersInRoom = (room) => {
-    room = room.trim().toLowerCase()
+    room = room.trim()
     return pairedUsers.filter((user) => user.room === room)
 }
 

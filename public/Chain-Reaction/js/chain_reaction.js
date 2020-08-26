@@ -84,7 +84,8 @@ function start(){
 	// screen.orientation.lock('landscape');
 
 	let is_paired = false
-	socket.emit('pair-chain-reaction', async(bool, id) => {
+	socket.emit('pair-chain-reaction', async(bool, id, myName, opponentName) => {
+        console.log("me = ", myName, "opponent = ", opponentName)
 		opponent.id = id
 		is_paired = bool
 		console.log("Paired ", is_paired)
@@ -389,7 +390,8 @@ async function play() {
 			console.log("Room Joined")
 		})
 
-		socket.on('start-chain-reaction', (opponent_id) => {
+		socket.on('start-chain-reaction', (opponent_id, myName, opponentName) => {
+            console.log("me = ", myName, "opponent = ", opponentName)
 			opponent.id = opponent_id
 			console.log(opponent.id)
 			start_function()

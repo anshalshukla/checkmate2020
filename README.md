@@ -12,7 +12,7 @@ Checkmate2020 has been filled with puzzles, riddles and head to head games. At t
 
 ![Ultimate Tic-Tac-Toe](/Images/Tic-tac-Toe.png)
 
-This version of Tic-Tac-Toe consists of a 3x3 grid of 3x3 grids, where you go head to head against another player. Both the players take turns playing in smaller grids until one player wins with respect to the huge grid.
+This variation of Tic-Tac-Toe features a 3x3 grid of 3x3 grids in which you compete with another player. Both the players take turns playing in smaller grids until one player wins with respect to the huge grid.
 
 ### Mastermind
 
